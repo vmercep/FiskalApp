@@ -13,5 +13,9 @@ namespace FiskalApp.Helpers
         public string ReportScheduler { get; set; }
 
         public string Connection { get; set; }
+
+        public string Mail { get; set; }
+
+        public string Password { get; set; }
     }
 }

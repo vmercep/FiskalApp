@@ -53,7 +53,8 @@ namespace FiskalApp
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddHostedService<ScheduledService>();
-
+            services.AddHostedService<ReportService>();
+            
 
 
 

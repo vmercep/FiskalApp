@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -75,6 +77,15 @@ namespace FiskalApp.Services
                     int count = racuni.Count();
                     int nefisk = racuni.Where(p => p.Jir == null).Count();
 
+                    ServicePointManager.ServerCertificateValidationCallback =
+                        delegate (
+                            object s,
+                            X509Certificate certificate,
+                            X509Chain chain,
+                            SslPolicyErrors sslPolicyErrors
+                        ) {
+                            return true;
+                        };
 
                     using (var message = new MailMessage())
                     {
@@ -87,9 +98,13 @@ namespace FiskalApp.Services
                         using (var client = new SmtpClient("smtp.gmail.com"))
                         {
                             client.Port = 587;
+                            client.UseDefaultCredentials = false;
                             client.Credentials = new NetworkCredential(networkMail, networkMailPassword);
+                            client.DeliveryMethod = SmtpDeliveryMethod.Network;
                             client.EnableSsl = true;
+                            client.Timeout =10000;
                             client.Send(message);
+                            _logger.LogInformation("Report send to "+settings.Email);
                         }
                     }
 
@@ -98,7 +113,7 @@ namespace FiskalApp.Services
             }
             catch (Exception e)
             {
-                _logger.LogInformation(e.Message);
+                _logger.LogError("Error: "+e.Message);
             }
 
 
