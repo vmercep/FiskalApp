@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="foo\**" />
+    <Content Remove="foo\**" />
+    <EmbeddedResource Remove="foo\**" />
+    <None Remove="foo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20201209114832_Initial2.cs" />
     <Compile Remove="Migrations\20201209114832_Initial2.Designer.cs" />
     <Compile Remove="Migrations\20201209114949_InitialMigration.cs" />
@@ -36,17 +43,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fiskal.Model\Fiskal.Model.csproj" />
-    <ProjectReference Include="..\Fiskal\Fiskal.csproj" />
+    <ProjectReference Include="foo\Fiskal.Model\Fiskal.Model.csproj" />
+    <ProjectReference Include="foo\Fiskal\Fiskal.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="docker-compose.override.yml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="docker-compose.yml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Dockerfile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 

@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiskalApp", "FiskalApp.csproj", "{FCEB6C13-2552-4C71-9F9A-70AD2723A577}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiskal.Model", "..\Fiskal.Model\Fiskal.Model.csproj", "{6408CA0F-CC73-4287-8B85-EF909AB641A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiskal.Model", "foo\Fiskal.Model\Fiskal.Model.csproj", "{6408CA0F-CC73-4287-8B85-EF909AB641A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiskal", "..\Fiskal\Fiskal.csproj", "{2F634399-F9BC-45F0-AE46-29D0D3A47C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiskal", "foo\Fiskal\Fiskal.csproj", "{2F634399-F9BC-45F0-AE46-29D0D3A47C67}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DDF9311E-A1E0-42DE-B5A2-F1C146268892}"
 EndProject

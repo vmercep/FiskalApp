@@ -102,9 +102,9 @@ namespace FiskalApp.Controllers
                 }
                 _repoWrapper.Save();
                 _logger.LogInformation("Fiskaliziram racun "+racun.BrojRacuna);
-                var racunFiskaliziran=await _fiskalizacija.FiskalizirajRacun(racun);
+                var racunFiskaliziran=_fiskalizacija.FiskalizirajRacun(racun);
 
-                return Ok(racunFiskaliziran);
+                return Ok(StatusCodes.Status200OK);
             }
             catch (Exception e)
             {

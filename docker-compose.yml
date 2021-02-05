@@ -14,6 +14,6 @@ services:
       AppSettings__ReportScheduler :  "15 21 * * *"
       AppSettings__Mail :  "vladimir.mercep.ostalo@gmail.com"
       AppSettings__Password :  "Vl4d1m1rM3rc3p"
-      AppSettings__Connection : "server=192.168.5.27;port=3306;database=wending_machine;user=root;password=;CharSet=utf8"
-      ConnectionStrings__DefaultConnection: "server=192.168.5.27;port=3306;database=wending_machine;user=root;password=;CharSet=utf8"
+      AppSettings__Connection : "server=192.168.5.166;port=3306;database=wending_machine;user=root;password=;CharSet=utf8"
+      ConnectionStrings__DefaultConnection: "server=192.168.5.166;port=3306;database=wending_machine;user=root;password=;CharSet=utf8"
       TZ: "Europe/Zagreb" 
